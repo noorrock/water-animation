@@ -1,0 +1,68 @@
+html : 
+
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<title> Water Wave Text Animation  </title>
+</head>
+<body>
+<div class="content">
+  <h2> water </h2>
+  <h2> water </h2>
+</div>
+</body>
+</html>
+
+
+css : 
+
+@import "http://scripts.sil.org/OFL";
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Lora;
+}
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+.content
+{
+  position: relative;
+}
+.content h2
+{
+  position: absolute;
+  color: #fff;
+  transform: translate(-50%,-50%);
+  font-size: 15em;
+}
+.content h2:nth-child(1)
+{
+  color: transparent;
+  -webkit-text-stroke: 2px #03a9f4;
+}
+.content h2:nth-child(2)
+{
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+@keyframes animate {
+  0%,100%
+  {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%,0% 100%);
+  }
+  50%
+  {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%,0% 100%);
+  }
+}
